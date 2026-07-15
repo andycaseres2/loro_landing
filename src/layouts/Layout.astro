@@ -58,7 +58,7 @@ const {
       "name": "Loro",
       "operatingSystem": "iOS, Android",
       "applicationCategory": "EducationalApplication",
-      "description": "App para aprender inglés desde cero con lecciones interactivas, chat con IA y gamificación.",
+      "description": "App para aprender inglés y español desde cero con lecciones interactivas, chat con IA y gamificación.",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -77,7 +77,7 @@ const {
     <Footer />
 
     <script>
-      // Intersection Observer for fade-up animations
+      // Intersection Observer for all scroll animations
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -89,7 +89,7 @@ const {
         { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
       );
 
-      document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+      document.querySelectorAll('.fade-up, .slide-in-left, .slide-in-right, .scale-up').forEach((el) => observer.observe(el));
 
       // Nav shadow on scroll
       const nav = document.getElementById('navbar');

@@ -4,25 +4,25 @@ const features = [
     icon: 'book',
     color: 'bg-emerald-100 text-emerald-600',
     title: 'Lecciones interactivas',
-    description: '4 tipos de ejercicios: opción múltiple, completar, ordenar palabras y dictado.',
+    description: '4 tipos de ejercicios: opción múltiple, completar, ordenar palabras y dictado. En inglés y español.',
   },
   {
     icon: 'chat',
     color: 'bg-blue-100 text-blue-600',
     title: 'Chat con IA',
-    description: 'Practica conversaciones reales con Loro. Te corrige en español para que entiendas cada error.',
+    description: 'Practica conversaciones reales con Loro. Te corrige y te explica cada error en tu idioma.',
   },
   {
     icon: 'mic',
     color: 'bg-violet-100 text-violet-600',
     title: 'Pronunciación',
-    description: 'Guías fonéticas diseñadas para hispanohablantes. Aprendé a pronunciar como un nativo.',
+    description: 'Guías fonéticas diseñadas para cada idioma. Aprendé a pronunciar como un nativo.',
   },
   {
-    icon: 'abc',
-    color: 'bg-amber-100 text-amber-600',
-    title: 'Desde el abecedario',
-    description: 'Nivel A0 para quienes no saben NADA de inglés. Empezamos desde las letras.',
+    icon: 'globe',
+    color: 'bg-accent-light text-accent',
+    title: 'Inglés y español',
+    description: '¿Hablás español? Aprendé inglés. ¿Hablás inglés? Aprendé español. Dos idiomas, una app.',
   },
   {
     icon: 'trophy',
@@ -47,18 +47,18 @@ const features = [
         Funciones
       </span>
       <h2 class="text-3xl md:text-4xl font-extrabold text-text tracking-tight leading-tight mb-4">
-        Todo lo que necesitás para aprender inglés
+        Todo lo que necesitás para aprender <span class="gradient-text">un nuevo idioma</span>
       </h2>
       <p class="text-text-secondary text-base leading-relaxed">
-        Diseñado especialmente para hispanohablantes que empiezan desde cero.
+        Diseñado para hispanohablantes que aprenden inglés y angloparlantes que aprenden español.
       </p>
     </div>
 
     <!-- Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
       {features.map((f) => (
-        <div class="bg-card rounded-2xl p-8 border border-border hover:-translate-y-1 hover:shadow-xl transition-all duration-300 fade-up">
-          <div class={`w-13 h-13 rounded-xl flex items-center justify-center mb-5 ${f.color}`}>
+        <div class="group bg-card rounded-2xl p-8 border border-border hover:-translate-y-1.5 hover:shadow-xl hover:border-primary/20 transition-all duration-300 fade-up">
+          <div class={`w-13 h-13 rounded-xl flex items-center justify-center mb-5 ${f.color} group-hover:scale-110 transition-transform duration-300`}>
             {f.icon === 'book' && (
               <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="m9 10 2 2 4-4"/></svg>
             )}
@@ -68,8 +68,8 @@ const features = [
             {f.icon === 'mic' && (
               <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
             )}
-            {f.icon === 'abc' && (
-              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16V8l4 8V8"/><path d="M10 8h2a2 2 0 1 1 0 4h-2v4h2a2 2 0 1 1 0-4"/><path d="M22 8h-2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2"/></svg>
+            {f.icon === 'globe' && (
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
             )}
             {f.icon === 'trophy' && (
               <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>

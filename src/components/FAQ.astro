@@ -1,0 +1,92 @@
+---
+const faqs = [
+  {
+    question: '¿Loro es realmente gratis?',
+    answer: 'Sí. Loro es gratis para descargar y usar. Todas las lecciones, el chat con IA y las funciones principales están disponibles sin costo. En el futuro podríamos ofrecer contenido premium opcional, pero siempre habrá una versión gratuita completa.',
+  },
+  {
+    question: '¿Puedo aprender español con Loro?',
+    answer: 'Sí. Loro funciona en dos direcciones: si hablás español podés aprender inglés, y si hablás inglés podés aprender español. La app detecta tu idioma y adapta las lecciones automáticamente.',
+  },
+  {
+    question: '¿Qué nivel puedo alcanzar?',
+    answer: 'Loro cubre desde nivel A0 (cero absoluto, para quienes no saben nada del idioma) hasta B1 (intermedio). Incluimos lecciones desde el abecedario hasta conversaciones reales con IA.',
+  },
+  {
+    question: '¿Necesito internet para usar Loro?',
+    answer: 'No siempre. Las lecciones se pueden descargar para usar sin conexión. El chat con IA sí necesita internet, pero el resto de la app funciona perfectamente offline.',
+  },
+  {
+    question: '¿En qué se diferencia de Duolingo?',
+    answer: 'Loro está diseñado específicamente para hispanohablantes y angloparlantes. Las explicaciones son en tu idioma nativo, la IA entiende tus errores típicos, y las lecciones están adaptadas culturalmente para Latinoamérica y el mundo anglosajón.',
+  },
+  {
+    question: '¿Cuánto tiempo necesito al día?',
+    answer: 'Con 5 minutos al día ya vas a notar progreso. Las lecciones están diseñadas para ser cortas y efectivas. Lo importante es la constancia, no la cantidad de horas.',
+  },
+];
+---
+
+<section id="faq" class="py-24 md:py-28 bg-white">
+  <div class="max-w-3xl mx-auto px-6">
+    <!-- Header -->
+    <div class="text-center max-w-xl mx-auto mb-16 fade-up">
+      <span class="inline-block text-xs font-bold uppercase tracking-widest text-primary mb-3">
+        FAQ
+      </span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-text tracking-tight leading-tight mb-4">
+        Preguntas frecuentes
+      </h2>
+      <p class="text-text-secondary text-base leading-relaxed">
+        Todo lo que necesitás saber antes de empezar.
+      </p>
+    </div>
+
+    <!-- FAQ Items -->
+    <div class="space-y-3 fade-up">
+      {faqs.map((faq, i) => (
+        <div class="bg-bg rounded-2xl border border-border overflow-hidden faq-item" data-faq={i}>
+          <button
+            class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-primary-light/30 transition-colors duration-200"
+            data-faq-toggle={i}
+          >
+            <span class="text-base font-semibold text-text pr-4">{faq.question}</span>
+            <svg class="w-5 h-5 text-text-muted shrink-0 faq-chevron" data-faq-chevron={i} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </button>
+          <div class="faq-answer" data-faq-answer={i}>
+            <div>
+              <p class="px-6 pb-5 text-sm text-text-secondary leading-relaxed">
+                {faq.answer}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('[data-faq-toggle]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const i = btn.getAttribute('data-faq-toggle');
+      const answer = document.querySelector(`[data-faq-answer="${i}"]`);
+      const chevron = document.querySelector(`[data-faq-chevron="${i}"]`);
+
+      // Close all others
+      document.querySelectorAll('.faq-answer.open').forEach((el) => {
+        if (el !== answer) {
+          el.classList.remove('open');
+          const otherI = el.getAttribute('data-faq-answer');
+          document.querySelector(`[data-faq-chevron="${otherI}"]`)?.classList.remove('open');
+        }
+      });
+
+      // Toggle current
+      answer?.classList.toggle('open');
+      chevron?.classList.toggle('open');
+    });
+  });
+</script>
