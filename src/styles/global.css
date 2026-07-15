@@ -167,6 +167,11 @@
   background-clip: text;
 }
 
+/* Theme-aware logos */
+.dark .logo-light { display: none; }
+.dark .logo-dark { display: inline-block; }
+.logo-dark { display: none; }
+
 /* Theme transition */
 html {
   transition: background-color 0.3s ease, color 0.3s ease;
