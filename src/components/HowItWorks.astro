@@ -1,9 +1,17 @@
 ---
+import { t, type Lang } from '../i18n/translations';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = 'es' } = Astro.props;
+
 const steps = [
   {
     number: 1,
-    title: 'Descargá Loro',
-    description: 'Disponible en App Store y Google Play. Sin tarjeta de crédito.',
+    title: t(lang, 'howItWorks.0.title'),
+    description: t(lang, 'howItWorks.0.description'),
     icon: 'download',
     color: 'from-primary to-emerald-500',
     shadow: 'rgba(5,150,105,0.3)',
@@ -11,8 +19,8 @@ const steps = [
   },
   {
     number: 2,
-    title: 'Elegí tu idioma',
-    description: '¿Querés aprender inglés o español? Elegí tu camino y tu nivel.',
+    title: t(lang, 'howItWorks.1.title'),
+    description: t(lang, 'howItWorks.1.description'),
     icon: 'globe',
     color: 'from-accent to-amber-500',
     shadow: 'rgba(249,115,22,0.3)',
@@ -20,8 +28,8 @@ const steps = [
   },
   {
     number: 3,
-    title: '5 minutos al día',
-    description: 'Completá lecciones, chateá con Loro y mirá cómo progresás.',
+    title: t(lang, 'howItWorks.2.title'),
+    description: t(lang, 'howItWorks.2.description'),
     icon: 'bolt',
     color: 'from-violet-500 to-indigo-500',
     shadow: 'rgba(139,92,246,0.3)',
@@ -35,13 +43,13 @@ const steps = [
     <!-- Header -->
     <div class="text-center max-w-xl mx-auto mb-16 fade-up">
       <span class="inline-block text-xs font-bold uppercase tracking-widest text-primary mb-3">
-        Cómo funciona
+        {t(lang, 'howItWorks.label')}
       </span>
       <h2 class="text-3xl md:text-4xl font-extrabold text-text tracking-tight leading-tight mb-4">
-        Empezá en 3 simples pasos
+        {t(lang, 'howItWorks.title')}
       </h2>
       <p class="text-text-secondary text-base leading-relaxed">
-        En menos de un minuto ya estás aprendiendo.
+        {t(lang, 'howItWorks.subtitle')}
       </p>
     </div>
 

@@ -2,12 +2,14 @@
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import type { Lang } from '../i18n/translations';
 
 interface Props {
   title: string;
   description: string;
   canonical?: string;
   ogImage?: string;
+  lang?: Lang;
 }
 
 const {
@@ -15,11 +17,12 @@ const {
   description,
   canonical = 'https://loro-landing.vercel.app',
   ogImage = 'https://loro-landing.vercel.app/logo.png',
+  lang = 'es',
 } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -83,9 +86,9 @@ const {
     })} />
   </head>
   <body class="bg-bg text-text font-sans antialiased overflow-x-hidden">
-    <Nav />
+    <Nav lang={lang} />
     <slot />
-    <Footer />
+    <Footer lang={lang} />
 
     <script>
       // Intersection Observer for all scroll animations

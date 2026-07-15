@@ -1,18 +1,26 @@
 ---
+import { t, type Lang } from '../i18n/translations';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = 'es' } = Astro.props;
+
 const screens = [
   {
-    title: 'Chat con IA',
-    description: 'Conversaciones reales con correcciones',
+    title: t(lang, 'screenshots.0.title'),
+    description: t(lang, 'screenshots.0.description'),
     image: '/screenshots/chat-real.png',
   },
   {
-    title: 'Lecciones interactivas',
-    description: 'Ejercicios que se adaptan a tu nivel',
+    title: t(lang, 'screenshots.1.title'),
+    description: t(lang, 'screenshots.1.description'),
     image: '/screenshots/lessons.png',
   },
   {
-    title: 'Tu progreso',
-    description: 'Estadísticas, rachas y logros',
+    title: t(lang, 'screenshots.2.title'),
+    description: t(lang, 'screenshots.2.description'),
     image: '/screenshots/progress.png',
   },
 ];
@@ -23,13 +31,13 @@ const screens = [
     <!-- Header -->
     <div class="text-center max-w-xl mx-auto mb-16 fade-up">
       <span class="inline-block text-xs font-bold uppercase tracking-widest text-accent mb-3">
-        Así se ve
+        {t(lang, 'screenshots.label')}
       </span>
       <h2 class="text-3xl md:text-4xl font-extrabold text-text tracking-tight leading-tight mb-4">
-        Una app diseñada para que <span class="gradient-text">disfrutes aprender</span>
+        {t(lang, 'screenshots.title')} <span class="gradient-text">{t(lang, 'screenshots.titleHighlight')}</span>
       </h2>
       <p class="text-text-secondary text-base leading-relaxed">
-        Interfaz limpia, intuitiva y con todo lo que necesitás al alcance de un tap.
+        {t(lang, 'screenshots.subtitle')}
       </p>
     </div>
 

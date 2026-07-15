@@ -1,4 +1,12 @@
 ---
+import { t, type Lang } from '../i18n/translations';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = 'es' } = Astro.props;
+const prefix = lang === 'en' ? '/en' : '';
 ---
 
 <footer class="bg-[#1a1a2e] dark:bg-[#080f1a] pt-12 pb-8">
@@ -12,11 +20,11 @@
 
       <!-- Links -->
       <ul class="flex flex-wrap justify-center gap-7 list-none">
-        <li><a href="/" class="text-sm text-slate-400 hover:text-slate-100 transition-colors">Inicio</a></li>
-        <li><a href="/#features" class="text-sm text-slate-400 hover:text-slate-100 transition-colors">Funciones</a></li>
-        <li><a href="/privacy" class="text-sm text-slate-400 hover:text-slate-100 transition-colors">Privacidad</a></li>
-        <li><a href="/terms" class="text-sm text-slate-400 hover:text-slate-100 transition-colors">Términos</a></li>
-        <li><a href="mailto:contacto@loro.app" class="text-sm text-slate-400 hover:text-slate-100 transition-colors">Contacto</a></li>
+        <li><a href={`${prefix}/`} class="text-sm text-slate-400 hover:text-slate-100 transition-colors">{t(lang, 'footer.home')}</a></li>
+        <li><a href={`${prefix}/#features`} class="text-sm text-slate-400 hover:text-slate-100 transition-colors">{t(lang, 'footer.features')}</a></li>
+        <li><a href="/privacy" class="text-sm text-slate-400 hover:text-slate-100 transition-colors">{t(lang, 'footer.privacy')}</a></li>
+        <li><a href="/terms" class="text-sm text-slate-400 hover:text-slate-100 transition-colors">{t(lang, 'footer.terms')}</a></li>
+        <li><a href="mailto:contacto@loro.app" class="text-sm text-slate-400 hover:text-slate-100 transition-colors">{t(lang, 'footer.contact')}</a></li>
       </ul>
 
       <!-- Social -->
@@ -47,7 +55,7 @@
 
     <!-- Bottom -->
     <div class="text-center mt-8 pt-6 border-t border-white/8 text-slate-500 text-xs">
-      &copy; 2026 Loro. Todos los derechos reservados.
+      &copy; {t(lang, 'footer.copyright')}
     </div>
   </div>
 </footer>

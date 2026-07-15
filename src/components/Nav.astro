@@ -1,4 +1,15 @@
 ---
+import { t, type Lang } from '../i18n/translations';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = 'es' } = Astro.props;
+const prefix = lang === 'en' ? '/en' : '';
+const switchLang = lang === 'es' ? 'en' : 'es';
+const switchHref = lang === 'es' ? '/en' : '/';
+const switchLabel = switchLang.toUpperCase();
 ---
 
 <nav
@@ -7,7 +18,7 @@
 >
   <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
     <!-- Brand -->
-    <a href="/" class="flex items-center gap-2.5 font-extrabold text-xl text-text">
+    <a href={`${prefix}/`} class="flex items-center gap-2.5 font-extrabold text-xl text-text">
       <img src="/logo-light.png" alt="Loro" width="36" height="36" class="rounded-xl logo-light" />
       <img src="/logo-dark.png" alt="Loro" width="36" height="36" class="rounded-xl logo-dark" />
       Loro
@@ -17,26 +28,35 @@
     <ul class="hidden md:flex items-center gap-6 list-none">
       <li>
         <a
-          href="/#features"
+          href={`${prefix}/#features`}
           class="text-sm font-medium text-text-secondary hover:text-primary transition-colors"
         >
-          Funciones
+          {t(lang, 'nav.features')}
         </a>
       </li>
       <li>
         <a
-          href="/#how-it-works"
+          href={`${prefix}/#how-it-works`}
           class="text-sm font-medium text-text-secondary hover:text-primary transition-colors"
         >
-          Cómo funciona
+          {t(lang, 'nav.howItWorks')}
         </a>
       </li>
       <li>
         <a
-          href="/#faq"
+          href={`${prefix}/#faq`}
           class="text-sm font-medium text-text-secondary hover:text-primary transition-colors"
         >
-          FAQ
+          {t(lang, 'nav.faq')}
+        </a>
+      </li>
+      <li>
+        <!-- Language switcher -->
+        <a
+          href={switchHref}
+          class="text-sm font-semibold text-text-secondary hover:text-primary transition-colors"
+        >
+          {switchLabel}
         </a>
       </li>
       <li>
@@ -44,7 +64,7 @@
         <button
           id="theme-toggle"
           class="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:text-primary hover:bg-primary-light transition-all"
-          aria-label="Cambiar tema"
+          aria-label={t(lang, 'nav.themeToggle')}
         >
           <!-- Sun (shown in dark mode) -->
           <svg id="icon-sun" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -57,17 +77,23 @@
           href="#download"
           class="inline-flex items-center px-5 py-2 bg-primary text-white text-sm font-semibold rounded-full hover:bg-primary-dark transition-all hover:-translate-y-0.5"
         >
-          Descargar
+          {t(lang, 'nav.download')}
         </a>
       </li>
     </ul>
 
-    <!-- Mobile: theme toggle + hamburger -->
+    <!-- Mobile: lang switch + theme toggle + hamburger -->
     <div class="md:hidden flex items-center gap-2">
+      <a
+        href={switchHref}
+        class="text-sm font-semibold text-text-secondary hover:text-primary transition-colors"
+      >
+        {switchLabel}
+      </a>
       <button
         id="theme-toggle-mobile"
         class="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:text-primary transition-all"
-        aria-label="Cambiar tema"
+        aria-label={t(lang, 'nav.themeToggle')}
       >
         <svg id="icon-sun-mobile" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         <svg id="icon-moon-mobile" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -75,7 +101,7 @@
       <button
         id="mobile-toggle"
         class="flex flex-col gap-1.5 p-2"
-        aria-label="Abrir menú"
+        aria-label={t(lang, 'nav.openMenu')}
       >
         <span class="block w-6 h-0.5 bg-text transition-all duration-300 origin-center" id="bar1"></span>
         <span class="block w-6 h-0.5 bg-text transition-all duration-300" id="bar2"></span>
@@ -89,10 +115,10 @@
     id="mobile-menu"
     class="md:hidden hidden flex-col items-center gap-4 pb-6 bg-card/95 backdrop-blur-xl border-b border-border"
   >
-    <a href="/#features" class="text-sm font-medium text-text-secondary hover:text-primary transition-colors">Funciones</a>
-    <a href="/#how-it-works" class="text-sm font-medium text-text-secondary hover:text-primary transition-colors">Cómo funciona</a>
-    <a href="/#faq" class="text-sm font-medium text-text-secondary hover:text-primary transition-colors">FAQ</a>
-    <a href="#download" class="inline-flex items-center px-5 py-2 bg-primary text-white text-sm font-semibold rounded-full hover:bg-primary-dark transition-all">Descargar</a>
+    <a href={`${prefix}/#features`} class="text-sm font-medium text-text-secondary hover:text-primary transition-colors">{t(lang, 'nav.features')}</a>
+    <a href={`${prefix}/#how-it-works`} class="text-sm font-medium text-text-secondary hover:text-primary transition-colors">{t(lang, 'nav.howItWorks')}</a>
+    <a href={`${prefix}/#faq`} class="text-sm font-medium text-text-secondary hover:text-primary transition-colors">{t(lang, 'nav.faq')}</a>
+    <a href="#download" class="inline-flex items-center px-5 py-2 bg-primary text-white text-sm font-semibold rounded-full hover:bg-primary-dark transition-all">{t(lang, 'nav.download')}</a>
   </div>
 </nav>
 

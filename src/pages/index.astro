@@ -8,19 +8,22 @@ import Testimonials from '../components/Testimonials.astro';
 import Stats from '../components/Stats.astro';
 import FAQ from '../components/FAQ.astro';
 import CTA from '../components/CTA.astro';
+
+const lang = 'es' as const;
 ---
 
 <Layout
   title="Loro - Aprendé inglés y español desde cero"
   description="Loro es la app para aprender idiomas desde cero. Inglés y español con lecciones interactivas, chat con IA, pronunciación y gamificación. Descargala gratis."
   canonical="https://loro-landing.vercel.app"
+  lang={lang}
 >
-  <Hero />
-  <Features />
-  <Screenshots />
-  <HowItWorks />
-  <Testimonials />
-  <Stats />
-  <FAQ />
-  <CTA />
+  <Hero lang={lang} />
+  <Features lang={lang} />
+  <Screenshots lang={lang} />
+  <HowItWorks lang={lang} />
+  <Testimonials lang={lang} />
+  <Stats lang={lang} />
+  <FAQ lang={lang} />
+  <CTA lang={lang} />
 </Layout>

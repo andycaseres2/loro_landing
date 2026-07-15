@@ -1,0 +1,29 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import Features from '../../components/Features.astro';
+import Screenshots from '../../components/Screenshots.astro';
+import HowItWorks from '../../components/HowItWorks.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import Stats from '../../components/Stats.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTA from '../../components/CTA.astro';
+
+const lang = 'en' as const;
+---
+
+<Layout
+  title="Loro - Learn English and Spanish from scratch"
+  description="Loro is the app to learn languages from scratch. English and Spanish with interactive lessons, AI chat, pronunciation, and gamification. Download for free."
+  canonical="https://loro-landing.vercel.app/en"
+  lang={lang}
+>
+  <Hero lang={lang} />
+  <Features lang={lang} />
+  <Screenshots lang={lang} />
+  <HowItWorks lang={lang} />
+  <Testimonials lang={lang} />
+  <Stats lang={lang} />
+  <FAQ lang={lang} />
+  <CTA lang={lang} />
+</Layout>
