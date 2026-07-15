@@ -55,6 +55,7 @@ const switchLabel = switchLang.toUpperCase();
         <a
           href={switchHref}
           class="text-sm font-semibold text-text-secondary hover:text-primary transition-colors"
+          onclick="localStorage.setItem('lang-chosen','1')"
         >
           {switchLabel}
         </a>

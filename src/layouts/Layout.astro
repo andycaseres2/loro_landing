@@ -54,6 +54,20 @@ const {
       rel="stylesheet"
     />
 
+    <!-- Language: auto-redirect based on browser language -->
+    <script is:inline>
+      (function() {
+        if (localStorage.getItem('lang-chosen')) return;
+        var path = window.location.pathname;
+        if (path !== '/' && path !== '/index.html') return;
+        var lang = (navigator.language || navigator.userLanguage || 'es').split('-')[0];
+        if (lang !== 'es') {
+          localStorage.setItem('lang-chosen', '1');
+          window.location.replace('/en');
+        }
+      })();
+    </script>
+
     <!-- Theme: prevent flash -->
     <script is:inline>
       (function() {
