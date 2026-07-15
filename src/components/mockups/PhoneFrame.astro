@@ -1,6 +1,7 @@
 ---
 interface Props {
   class?: string;
+  showTabBar?: boolean;
 }
 
 const { class: className = '' } = Astro.props;
@@ -22,8 +23,11 @@ const { class: className = '' } = Astro.props;
       </div>
     </div>
     <!-- Screen content -->
-    <div class="bg-[#f8faf9] rounded-b-[2rem] overflow-hidden" style="height: 480px;">
-      <slot />
+    <div class="bg-[#f8faf9] rounded-b-[2rem] overflow-hidden flex flex-col" style="height: 480px;">
+      <div class="flex-1 overflow-hidden">
+        <slot />
+      </div>
+      <slot name="tabbar" />
     </div>
   </div>
 </div>

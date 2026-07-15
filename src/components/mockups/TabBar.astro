@@ -15,7 +15,7 @@ const tabs = [
 ] as const;
 ---
 
-<div class="absolute bottom-0 left-0 right-0 bg-white border-t border-[#e5e7eb]/80 flex justify-around items-end pt-1.5 pb-3 px-1 rounded-b-[2rem]">
+<div class="bg-white border-t border-[#e5e7eb]/80 flex justify-around items-end pt-1.5 pb-3 px-1 rounded-b-[2rem] shrink-0">
   {tabs.map((tab) => {
     const isActive = tab.id === active;
     const color = isActive ? '#059669' : '#9ca3af';
