@@ -1,0 +1,120 @@
+---
+import PhoneFrame from './PhoneFrame.astro';
+---
+
+<PhoneFrame>
+  <div class="px-4 py-3 text-[#1a1a2e]" style="font-family: 'Inter', sans-serif;">
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-3">
+      <div>
+        <p class="text-[10px] text-[#9ca3af]">Buenos días</p>
+        <p class="text-[15px] font-extrabold tracking-tight">Hoy</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-full bg-[#eef2ff] flex items-center justify-center">
+          <svg class="w-4 h-4 text-[#6366f1]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </div>
+        <img src="/logo.png" alt="" class="w-8 h-8 rounded-full" />
+      </div>
+    </div>
+
+    <!-- Stats row -->
+    <div class="flex gap-2 mb-3">
+      <div class="flex-1 bg-[#fef3c7] rounded-xl py-2.5 px-2 text-center">
+        <div class="text-[11px]">🔥</div>
+        <div class="text-[16px] font-extrabold">3</div>
+        <div class="text-[9px] font-semibold text-[#92400e]">Racha</div>
+      </div>
+      <div class="flex-1 bg-[#d1fae5] rounded-xl py-2.5 px-2 text-center">
+        <div class="text-[11px]">⭐</div>
+        <div class="text-[16px] font-extrabold">450</div>
+        <div class="text-[9px] font-semibold text-[#065f46]">XP</div>
+      </div>
+      <div class="flex-1 bg-[#dbeafe] rounded-xl py-2.5 px-2 text-center">
+        <div class="text-[11px]">💎</div>
+        <div class="text-[16px] font-extrabold">120</div>
+        <div class="text-[9px] font-semibold text-[#1e40af]">Gemas</div>
+      </div>
+    </div>
+
+    <!-- Daily goal -->
+    <div class="bg-white rounded-2xl p-3 mb-3 shadow-sm border border-[#e5e7eb]">
+      <div class="flex items-center gap-2.5 mb-2">
+        <div class="w-9 h-9 rounded-full bg-[#d1fae5] flex items-center justify-center text-[14px]">🎯</div>
+        <div class="flex-1">
+          <p class="text-[12px] font-bold">Meta diaria</p>
+          <p class="text-[10px] text-[#9ca3af]">15 XP de 30 XP</p>
+        </div>
+        <span class="text-[12px] font-extrabold text-[#059669]">50%</span>
+      </div>
+      <div class="w-full h-2 bg-[#e5e7eb] rounded-full overflow-hidden">
+        <div class="h-full bg-[#059669] rounded-full" style="width: 50%"></div>
+      </div>
+    </div>
+
+    <!-- Hearts -->
+    <div class="bg-white rounded-2xl p-3 mb-3 shadow-sm border border-[#e5e7eb]">
+      <div class="flex items-center gap-2.5">
+        <div class="flex gap-0.5">
+          <span class="text-[14px]">❤️</span>
+          <span class="text-[14px]">❤️</span>
+          <span class="text-[14px]">❤️</span>
+          <span class="text-[14px]">❤️</span>
+          <span class="text-[14px] opacity-30">❤️</span>
+        </div>
+        <p class="text-[11px] font-semibold text-[#9ca3af] ml-auto">4 / 5 vidas</p>
+      </div>
+    </div>
+
+    <!-- Lesson of the day -->
+    <div class="bg-white rounded-2xl p-3 mb-3 shadow-sm border border-[#e5e7eb]">
+      <p class="text-[9px] font-bold uppercase tracking-wider text-[#059669] mb-1.5">Lección del día</p>
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-xl bg-[#d1fae5] flex items-center justify-center">
+          <svg class="w-4 h-4 text-[#059669]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+        </div>
+        <div class="flex-1">
+          <p class="text-[12px] font-bold">Saludos y presentaciones</p>
+          <p class="text-[10px] text-[#9ca3af]">Nivel A0 · 12 ejercicios</p>
+        </div>
+        <div class="w-7 h-7 rounded-full bg-[#059669] flex items-center justify-center">
+          <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Practice card -->
+    <div class="bg-white rounded-2xl p-3 shadow-sm border border-[#e5e7eb]">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-xl bg-[#dbeafe] flex items-center justify-center">
+          <svg class="w-4 h-4 text-[#6366f1]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="flex-1">
+          <p class="text-[12px] font-bold">Practicá con Loro</p>
+          <p class="text-[10px] text-[#9ca3af]">Conversaciones con IA</p>
+        </div>
+        <svg class="w-4 h-4 text-[#9ca3af]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </div>
+    </div>
+
+    <!-- Tab bar -->
+    <div class="absolute bottom-0 left-0 right-0 bg-white border-t border-[#e5e7eb] flex justify-around py-2 px-2 rounded-b-[2rem]">
+      <div class="flex flex-col items-center gap-0.5">
+        <svg class="w-5 h-5 text-[#059669]" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        <span class="text-[8px] font-semibold text-[#059669]">Hoy</span>
+      </div>
+      <div class="flex flex-col items-center gap-0.5">
+        <svg class="w-5 h-5 text-[#9ca3af]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+        <span class="text-[8px] font-semibold text-[#9ca3af]">Lecciones</span>
+      </div>
+      <div class="flex flex-col items-center gap-0.5">
+        <svg class="w-5 h-5 text-[#9ca3af]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <span class="text-[8px] font-semibold text-[#9ca3af]">Diccionario</span>
+      </div>
+      <div class="flex flex-col items-center gap-0.5">
+        <svg class="w-5 h-5 text-[#9ca3af]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+        <span class="text-[8px] font-semibold text-[#9ca3af]">Progreso</span>
+      </div>
+    </div>
+  </div>
+</PhoneFrame>

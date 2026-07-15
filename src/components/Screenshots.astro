@@ -1,21 +1,7 @@
 ---
-const screens = [
-  {
-    title: 'Chat con IA',
-    description: 'Conversaciones reales con correcciones instantáneas',
-    image: '/screenshots/chat.png',
-  },
-  {
-    title: 'Lecciones interactivas',
-    description: 'Ejercicios variados que se adaptan a tu nivel',
-    image: '/screenshots/lecciones.png',
-  },
-  {
-    title: 'Tu progreso',
-    description: 'Estadísticas, rachas y logros que te motivan',
-    image: '/screenshots/progreso.png',
-  },
-];
+import MockupChat from './mockups/MockupChat.astro';
+import MockupLessons from './mockups/MockupLessons.astro';
+import MockupProgress from './mockups/MockupProgress.astro';
 ---
 
 <section id="preview" class="py-24 md:py-28 bg-white overflow-hidden">
@@ -33,22 +19,37 @@ const screens = [
       </p>
     </div>
 
-    <!-- Screenshots -->
-    <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-6 lg:gap-10">
-      {screens.map((screen, i) => (
-        <div class={`flex flex-col items-center ${i === 1 ? 'md:-mt-8' : ''} fade-up`}>
-          <img
-            src={screen.image}
-            alt={`Loro App - ${screen.title}`}
-            class="w-[220px] sm:w-[240px] h-auto rounded-3xl shadow-2xl shadow-black/20 hover:-translate-y-2 transition-transform duration-500"
-          />
-          <!-- Caption -->
-          <div class="text-center mt-5">
-            <h3 class="text-base font-bold text-text">{screen.title}</h3>
-            <p class="text-sm text-text-secondary mt-1">{screen.description}</p>
-          </div>
+    <!-- Mockups -->
+    <div class="flex flex-col md:flex-row items-start justify-center gap-10 md:gap-6 lg:gap-10">
+      <div class="flex flex-col items-center fade-up mx-auto md:mx-0">
+        <div class="hover:-translate-y-2 transition-transform duration-500">
+          <MockupChat />
         </div>
-      ))}
+        <div class="text-center mt-5">
+          <h3 class="text-base font-bold text-text">Chat con IA</h3>
+          <p class="text-sm text-text-secondary mt-1">Conversaciones reales con correcciones</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center fade-up md:-mt-8 mx-auto md:mx-0">
+        <div class="hover:-translate-y-2 transition-transform duration-500">
+          <MockupLessons />
+        </div>
+        <div class="text-center mt-5">
+          <h3 class="text-base font-bold text-text">Lecciones interactivas</h3>
+          <p class="text-sm text-text-secondary mt-1">Ejercicios que se adaptan a tu nivel</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center fade-up mx-auto md:mx-0">
+        <div class="hover:-translate-y-2 transition-transform duration-500">
+          <MockupProgress />
+        </div>
+        <div class="text-center mt-5">
+          <h3 class="text-base font-bold text-text">Tu progreso</h3>
+          <p class="text-sm text-text-secondary mt-1">Estadísticas, rachas y logros</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>

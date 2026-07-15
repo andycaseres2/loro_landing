@@ -1,0 +1,29 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<div class={`w-[260px] shrink-0 ${className}`}>
+  <!-- Phone outer frame -->
+  <div class="bg-gray-900 rounded-[2.5rem] p-[10px] shadow-2xl shadow-black/25">
+    <!-- Status bar -->
+    <div class="bg-white rounded-t-[2rem] px-5 pt-2 pb-0 flex items-center justify-between text-[10px] font-semibold text-gray-900">
+      <span>9:41</span>
+      <div class="flex items-center gap-1">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.237 4.237 0 00-6 0zm-4-4l2 2a7.074 7.074 0 0110 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><rect x="17" y="4" width="4" height="16" rx="1"/><rect x="11" y="8" width="4" height="12" rx="1"/><rect x="5" y="12" width="4" height="8" rx="1"/></svg>
+        <div class="w-6 h-3 border border-gray-900 rounded-sm relative ml-0.5">
+          <div class="absolute inset-[1.5px] right-[2px] bg-gray-900 rounded-[1px]" style="width: 75%"></div>
+          <div class="absolute -right-[3px] top-1/2 -translate-y-1/2 w-[2px] h-[5px] bg-gray-900 rounded-r-sm"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Screen content -->
+    <div class="bg-[#f8faf9] rounded-b-[2rem] overflow-hidden" style="height: 480px;">
+      <slot />
+    </div>
+  </div>
+</div>

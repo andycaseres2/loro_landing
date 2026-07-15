@@ -1,0 +1,130 @@
+---
+import PhoneFrame from './PhoneFrame.astro';
+---
+
+<PhoneFrame>
+  <div class="px-4 py-3 text-[#1a1a2e]" style="font-family: 'Inter', sans-serif;">
+    <!-- Header -->
+    <p class="text-[17px] font-extrabold tracking-tight mb-3">Progreso</p>
+
+    <!-- Stats grid -->
+    <div class="grid grid-cols-2 gap-2 mb-3">
+      <div class="bg-[#fef3c7] rounded-xl p-2.5">
+        <div class="w-8 h-8 rounded-full bg-white/70 flex items-center justify-center mb-1.5">
+          <span class="text-[14px]">🔥</span>
+        </div>
+        <p class="text-[18px] font-extrabold">3</p>
+        <p class="text-[9px] font-semibold text-[#92400e]">Días de racha</p>
+      </div>
+      <div class="bg-[#d1fae5] rounded-xl p-2.5">
+        <div class="w-8 h-8 rounded-full bg-white/70 flex items-center justify-center mb-1.5">
+          <span class="text-[14px]">⭐</span>
+        </div>
+        <p class="text-[18px] font-extrabold">450</p>
+        <p class="text-[9px] font-semibold text-[#065f46]">XP total</p>
+      </div>
+      <div class="bg-[#e0e7ff] rounded-xl p-2.5">
+        <div class="w-8 h-8 rounded-full bg-white/70 flex items-center justify-center mb-1.5">
+          <span class="text-[14px]">📚</span>
+        </div>
+        <p class="text-[18px] font-extrabold">5</p>
+        <p class="text-[9px] font-semibold text-[#3730a3]">Lecciones</p>
+      </div>
+      <div class="bg-[#fce7f3] rounded-xl p-2.5">
+        <div class="w-8 h-8 rounded-full bg-white/70 flex items-center justify-center mb-1.5">
+          <span class="text-[14px]">📝</span>
+        </div>
+        <p class="text-[18px] font-extrabold">87</p>
+        <p class="text-[9px] font-semibold text-[#9d174d]">Palabras</p>
+      </div>
+    </div>
+
+    <!-- Level progress -->
+    <div class="bg-white rounded-2xl p-3 mb-3 border border-[#e5e7eb] shadow-sm">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-[14px]">📊</span>
+        <p class="text-[12px] font-bold">Nivel actual</p>
+      </div>
+      <p class="text-[15px] font-extrabold mb-1.5">A0 · Principiante</p>
+      <div class="w-full h-2.5 bg-[#e5e7eb] rounded-full overflow-hidden mb-1">
+        <div class="h-full bg-[#059669] rounded-full" style="width: 35%"></div>
+      </div>
+      <p class="text-[9px] text-[#9ca3af]">5 de 14 lecciones completadas</p>
+    </div>
+
+    <!-- Achievements -->
+    <div class="mb-3">
+      <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center gap-1.5">
+          <span class="text-[14px]">🏆</span>
+          <p class="text-[12px] font-bold">Logros</p>
+        </div>
+        <span class="text-[9px] font-semibold bg-[#d1fae5] text-[#059669] px-2 py-0.5 rounded-full">3 / 12</span>
+      </div>
+
+      <div class="grid grid-cols-2 gap-2">
+        <!-- Earned -->
+        <div class="bg-white rounded-xl p-2.5 border border-[#e5e7eb] shadow-sm relative">
+          <div class="w-10 h-10 rounded-full bg-[#d1fae5] flex items-center justify-center mb-1.5 mx-auto">
+            <span class="text-[18px]">⭐</span>
+          </div>
+          <div class="absolute top-2 right-2">
+            <svg class="w-3.5 h-3.5 text-[#059669]" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          </div>
+          <p class="text-[10px] font-bold text-center">Primera lección</p>
+          <p class="text-[8px] text-[#059669] font-semibold text-center mt-0.5">Obtenido</p>
+        </div>
+
+        <!-- Earned -->
+        <div class="bg-white rounded-xl p-2.5 border border-[#e5e7eb] shadow-sm relative">
+          <div class="w-10 h-10 rounded-full bg-[#fef3c7] flex items-center justify-center mb-1.5 mx-auto">
+            <span class="text-[18px]">🔥</span>
+          </div>
+          <div class="absolute top-2 right-2">
+            <svg class="w-3.5 h-3.5 text-[#059669]" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          </div>
+          <p class="text-[10px] font-bold text-center">3 días seguidos</p>
+          <p class="text-[8px] text-[#059669] font-semibold text-center mt-0.5">Obtenido</p>
+        </div>
+
+        <!-- Locked -->
+        <div class="bg-white rounded-xl p-2.5 border border-[#e5e7eb] shadow-sm opacity-50">
+          <div class="w-10 h-10 rounded-full bg-[#f3f4f6] flex items-center justify-center mb-1.5 mx-auto">
+            <span class="text-[18px] grayscale">🏅</span>
+          </div>
+          <p class="text-[10px] font-bold text-center text-[#9ca3af]">Nivel A1</p>
+          <p class="text-[8px] text-[#9ca3af] text-center mt-0.5">5 / 14</p>
+        </div>
+
+        <!-- Locked -->
+        <div class="bg-white rounded-xl p-2.5 border border-[#e5e7eb] shadow-sm opacity-50">
+          <div class="w-10 h-10 rounded-full bg-[#f3f4f6] flex items-center justify-center mb-1.5 mx-auto">
+            <span class="text-[18px] grayscale">👑</span>
+          </div>
+          <p class="text-[10px] font-bold text-center text-[#9ca3af]">Racha de 7</p>
+          <p class="text-[8px] text-[#9ca3af] text-center mt-0.5">3 / 7</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab bar -->
+    <div class="absolute bottom-0 left-0 right-0 bg-white border-t border-[#e5e7eb] flex justify-around py-2 px-2 rounded-b-[2rem]">
+      <div class="flex flex-col items-center gap-0.5">
+        <svg class="w-5 h-5 text-[#9ca3af]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        <span class="text-[8px] font-semibold text-[#9ca3af]">Hoy</span>
+      </div>
+      <div class="flex flex-col items-center gap-0.5">
+        <svg class="w-5 h-5 text-[#9ca3af]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+        <span class="text-[8px] font-semibold text-[#9ca3af]">Lecciones</span>
+      </div>
+      <div class="flex flex-col items-center gap-0.5">
+        <svg class="w-5 h-5 text-[#9ca3af]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <span class="text-[8px] font-semibold text-[#9ca3af]">Diccionario</span>
+      </div>
+      <div class="flex flex-col items-center gap-0.5">
+        <svg class="w-5 h-5 text-[#059669]" viewBox="0 0 24 24" fill="currentColor"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        <span class="text-[8px] font-semibold text-[#059669]">Progreso</span>
+      </div>
+    </div>
+  </div>
+</PhoneFrame>
