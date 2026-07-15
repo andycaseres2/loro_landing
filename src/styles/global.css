@@ -12,7 +12,24 @@
   --color-text-muted: #9ca3af;
   --color-bg: #f8faf9;
   --color-card: #ffffff;
+  --color-surface: #ffffff;
   --color-border: #e5e7eb;
+}
+
+/* Dark mode overrides */
+.dark {
+  --color-primary: #2dd4bf;
+  --color-primary-light: #134e4a;
+  --color-primary-dark: #5eead4;
+  --color-accent: #fb923c;
+  --color-accent-light: #431407;
+  --color-text: #f1f5f9;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #64748b;
+  --color-bg: #0d1b2a;
+  --color-card: #132337;
+  --color-surface: #0f2235;
+  --color-border: #1e3a5f;
 }
 
 /* Float animation */
@@ -121,8 +138,18 @@
   50% { box-shadow: 0 0 0 12px rgba(5, 150, 105, 0); }
 }
 
+.dark .pulse-glow,
 .pulse-glow {
   animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-glow-dark {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(45, 212, 191, 0); }
+}
+
+.dark .pulse-glow {
+  animation: pulse-glow-dark 2.5s ease-in-out infinite;
 }
 
 /* Gradient text */
@@ -131,4 +158,16 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.dark .gradient-text {
+  background: linear-gradient(135deg, #2dd4bf 0%, #fb923c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Theme transition */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

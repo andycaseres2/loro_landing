@@ -3,7 +3,7 @@
 
 <nav
   id="navbar"
-  class="fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-xl border-b border-border transition-shadow duration-300"
+  class="fixed top-0 left-0 right-0 z-50 bg-card/85 backdrop-blur-xl border-b border-border transition-all duration-300"
 >
   <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
     <!-- Brand -->
@@ -13,7 +13,7 @@
     </a>
 
     <!-- Desktop links -->
-    <ul class="hidden md:flex items-center gap-8 list-none">
+    <ul class="hidden md:flex items-center gap-6 list-none">
       <li>
         <a
           href="/#features"
@@ -39,6 +39,19 @@
         </a>
       </li>
       <li>
+        <!-- Theme toggle -->
+        <button
+          id="theme-toggle"
+          class="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:text-primary hover:bg-primary-light transition-all"
+          aria-label="Cambiar tema"
+        >
+          <!-- Sun (shown in dark mode) -->
+          <svg id="icon-sun" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <!-- Moon (shown in light mode) -->
+          <svg id="icon-moon" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </li>
+      <li>
         <a
           href="#download"
           class="inline-flex items-center px-5 py-2 bg-primary text-white text-sm font-semibold rounded-full hover:bg-primary-dark transition-all hover:-translate-y-0.5"
@@ -48,51 +61,70 @@
       </li>
     </ul>
 
-    <!-- Mobile toggle -->
-    <button
-      id="mobile-toggle"
-      class="md:hidden flex flex-col gap-1.5 p-2"
-      aria-label="Abrir menú"
-    >
-      <span class="block w-6 h-0.5 bg-text transition-all duration-300 origin-center" id="bar1"></span>
-      <span class="block w-6 h-0.5 bg-text transition-all duration-300" id="bar2"></span>
-      <span class="block w-6 h-0.5 bg-text transition-all duration-300 origin-center" id="bar3"></span>
-    </button>
+    <!-- Mobile: theme toggle + hamburger -->
+    <div class="md:hidden flex items-center gap-2">
+      <button
+        id="theme-toggle-mobile"
+        class="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:text-primary transition-all"
+        aria-label="Cambiar tema"
+      >
+        <svg id="icon-sun-mobile" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg id="icon-moon-mobile" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button
+        id="mobile-toggle"
+        class="flex flex-col gap-1.5 p-2"
+        aria-label="Abrir menú"
+      >
+        <span class="block w-6 h-0.5 bg-text transition-all duration-300 origin-center" id="bar1"></span>
+        <span class="block w-6 h-0.5 bg-text transition-all duration-300" id="bar2"></span>
+        <span class="block w-6 h-0.5 bg-text transition-all duration-300 origin-center" id="bar3"></span>
+      </button>
+    </div>
   </div>
 
   <!-- Mobile menu -->
   <div
     id="mobile-menu"
-    class="md:hidden hidden flex-col items-center gap-4 pb-6 bg-white/95 backdrop-blur-xl border-b border-border"
+    class="md:hidden hidden flex-col items-center gap-4 pb-6 bg-card/95 backdrop-blur-xl border-b border-border"
   >
-    <a
-      href="/#features"
-      class="text-sm font-medium text-text-secondary hover:text-primary transition-colors"
-    >
-      Funciones
-    </a>
-    <a
-      href="/#how-it-works"
-      class="text-sm font-medium text-text-secondary hover:text-primary transition-colors"
-    >
-      Cómo funciona
-    </a>
-    <a
-      href="/#faq"
-      class="text-sm font-medium text-text-secondary hover:text-primary transition-colors"
-    >
-      FAQ
-    </a>
-    <a
-      href="#download"
-      class="inline-flex items-center px-5 py-2 bg-primary text-white text-sm font-semibold rounded-full hover:bg-primary-dark transition-all"
-    >
-      Descargar
-    </a>
+    <a href="/#features" class="text-sm font-medium text-text-secondary hover:text-primary transition-colors">Funciones</a>
+    <a href="/#how-it-works" class="text-sm font-medium text-text-secondary hover:text-primary transition-colors">Cómo funciona</a>
+    <a href="/#faq" class="text-sm font-medium text-text-secondary hover:text-primary transition-colors">FAQ</a>
+    <a href="#download" class="inline-flex items-center px-5 py-2 bg-primary text-white text-sm font-semibold rounded-full hover:bg-primary-dark transition-all">Descargar</a>
   </div>
 </nav>
 
 <script>
+  // Theme toggle
+  function updateIcons(isDark: boolean) {
+    const sunIcons = [document.getElementById('icon-sun'), document.getElementById('icon-sun-mobile')];
+    const moonIcons = [document.getElementById('icon-moon'), document.getElementById('icon-moon-mobile')];
+    sunIcons.forEach(el => el?.classList.toggle('hidden', !isDark));
+    moonIcons.forEach(el => el?.classList.toggle('hidden', isDark));
+  }
+
+  function setTheme(dark: boolean) {
+    document.documentElement.classList.toggle('dark', dark);
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+    updateIcons(dark);
+  }
+
+  // Init theme
+  const saved = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const isDark = saved === 'dark' || (!saved && prefersDark);
+  setTheme(isDark);
+
+  // Toggle buttons
+  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+    setTheme(!document.documentElement.classList.contains('dark'));
+  });
+  document.getElementById('theme-toggle-mobile')?.addEventListener('click', () => {
+    setTheme(!document.documentElement.classList.contains('dark'));
+  });
+
+  // Mobile menu
   const toggle = document.getElementById('mobile-toggle');
   const menu = document.getElementById('mobile-menu');
   const bar1 = document.getElementById('bar1');
@@ -117,7 +149,6 @@
       }
     });
 
-    // Close menu on link click
     menu.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
         menu.classList.remove('flex');
