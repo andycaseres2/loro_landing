@@ -1,0 +1,87 @@
+---
+const features = [
+  {
+    icon: 'book',
+    color: 'bg-emerald-100 text-emerald-600',
+    title: 'Lecciones interactivas',
+    description: '4 tipos de ejercicios: opción múltiple, completar, ordenar palabras y dictado.',
+  },
+  {
+    icon: 'chat',
+    color: 'bg-blue-100 text-blue-600',
+    title: 'Chat con IA',
+    description: 'Practica conversaciones reales con Loro. Te corrige en español para que entiendas cada error.',
+  },
+  {
+    icon: 'mic',
+    color: 'bg-violet-100 text-violet-600',
+    title: 'Pronunciación',
+    description: 'Guías fonéticas diseñadas para hispanohablantes. Aprendé a pronunciar como un nativo.',
+  },
+  {
+    icon: 'abc',
+    color: 'bg-amber-100 text-amber-600',
+    title: 'Desde el abecedario',
+    description: 'Nivel A0 para quienes no saben NADA de inglés. Empezamos desde las letras.',
+  },
+  {
+    icon: 'trophy',
+    color: 'bg-rose-100 text-rose-600',
+    title: 'Gamificación completa',
+    description: 'XP, rachas, gemas, vidas, logros y ranking semanal. Aprender nunca fue tan divertido.',
+  },
+  {
+    icon: 'moon',
+    color: 'bg-slate-100 text-slate-600',
+    title: 'Modo offline y oscuro',
+    description: 'Estudiá sin internet y de noche sin cansar la vista.',
+  },
+];
+---
+
+<section id="features" class="py-24 md:py-28 bg-bg">
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Header -->
+    <div class="text-center max-w-xl mx-auto mb-16 fade-up">
+      <span class="inline-block text-xs font-bold uppercase tracking-widest text-primary mb-3">
+        Funciones
+      </span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-text tracking-tight leading-tight mb-4">
+        Todo lo que necesitás para aprender inglés
+      </h2>
+      <p class="text-text-secondary text-base leading-relaxed">
+        Diseñado especialmente para hispanohablantes que empiezan desde cero.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {features.map((f) => (
+        <div class="bg-card rounded-2xl p-8 border border-border hover:-translate-y-1 hover:shadow-xl transition-all duration-300 fade-up">
+          <div class={`w-13 h-13 rounded-xl flex items-center justify-center mb-5 ${f.color}`}>
+            {f.icon === 'book' && (
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="m9 10 2 2 4-4"/></svg>
+            )}
+            {f.icon === 'chat' && (
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/></svg>
+            )}
+            {f.icon === 'mic' && (
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+            )}
+            {f.icon === 'abc' && (
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16V8l4 8V8"/><path d="M10 8h2a2 2 0 1 1 0 4h-2v4h2a2 2 0 1 1 0-4"/><path d="M22 8h-2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2"/></svg>
+            )}
+            {f.icon === 'trophy' && (
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+            )}
+            {f.icon === 'moon' && (
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            )}
+          </div>
+          <h3 class="text-lg font-bold text-text mb-2">{f.title}</h3>
+          <p class="text-sm text-text-secondary leading-relaxed">{f.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

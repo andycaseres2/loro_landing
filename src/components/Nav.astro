@@ -1,0 +1,117 @@
+---
+---
+
+<nav
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-xl border-b border-border transition-shadow duration-300"
+>
+  <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+    <!-- Brand -->
+    <a href="/" class="flex items-center gap-2.5 font-extrabold text-xl text-text">
+      <img src="/logo.png" alt="Loro" width="36" height="36" class="rounded-lg" />
+      Loro
+    </a>
+
+    <!-- Desktop links -->
+    <ul class="hidden md:flex items-center gap-8 list-none">
+      <li>
+        <a
+          href="/#features"
+          class="text-sm font-medium text-text-secondary hover:text-primary transition-colors"
+        >
+          Funciones
+        </a>
+      </li>
+      <li>
+        <a
+          href="/#how-it-works"
+          class="text-sm font-medium text-text-secondary hover:text-primary transition-colors"
+        >
+          Cómo funciona
+        </a>
+      </li>
+      <li>
+        <a
+          href="#download"
+          class="inline-flex items-center px-5 py-2 bg-primary text-white text-sm font-semibold rounded-full hover:bg-primary-dark transition-all hover:-translate-y-0.5"
+        >
+          Descargar
+        </a>
+      </li>
+    </ul>
+
+    <!-- Mobile toggle -->
+    <button
+      id="mobile-toggle"
+      class="md:hidden flex flex-col gap-1.5 p-2"
+      aria-label="Abrir menú"
+    >
+      <span class="block w-6 h-0.5 bg-text transition-all duration-300 origin-center" id="bar1"></span>
+      <span class="block w-6 h-0.5 bg-text transition-all duration-300" id="bar2"></span>
+      <span class="block w-6 h-0.5 bg-text transition-all duration-300 origin-center" id="bar3"></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="md:hidden hidden flex-col items-center gap-4 pb-6 bg-white/95 backdrop-blur-xl border-b border-border"
+  >
+    <a
+      href="/#features"
+      class="text-sm font-medium text-text-secondary hover:text-primary transition-colors"
+    >
+      Funciones
+    </a>
+    <a
+      href="/#how-it-works"
+      class="text-sm font-medium text-text-secondary hover:text-primary transition-colors"
+    >
+      Cómo funciona
+    </a>
+    <a
+      href="#download"
+      class="inline-flex items-center px-5 py-2 bg-primary text-white text-sm font-semibold rounded-full hover:bg-primary-dark transition-all"
+    >
+      Descargar
+    </a>
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById('mobile-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const bar1 = document.getElementById('bar1');
+  const bar2 = document.getElementById('bar2');
+  const bar3 = document.getElementById('bar3');
+
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const isOpen = menu.classList.contains('flex');
+      if (isOpen) {
+        menu.classList.remove('flex');
+        menu.classList.add('hidden');
+        bar1?.classList.remove('rotate-45', 'translate-y-2');
+        bar2?.classList.remove('opacity-0');
+        bar3?.classList.remove('-rotate-45', '-translate-y-2');
+      } else {
+        menu.classList.remove('hidden');
+        menu.classList.add('flex');
+        bar1?.classList.add('rotate-45', 'translate-y-2');
+        bar2?.classList.add('opacity-0');
+        bar3?.classList.add('-rotate-45', '-translate-y-2');
+      }
+    });
+
+    // Close menu on link click
+    menu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('flex');
+        menu.classList.add('hidden');
+        bar1?.classList.remove('rotate-45', 'translate-y-2');
+        bar2?.classList.remove('opacity-0');
+        bar3?.classList.remove('-rotate-45', '-translate-y-2');
+      });
+    });
+  }
+</script>
