@@ -1,5 +1,6 @@
 ---
 import PhoneFrame from './PhoneFrame.astro';
+import TabBar from './TabBar.astro';
 ---
 
 <PhoneFrame>
@@ -97,24 +98,6 @@ import PhoneFrame from './PhoneFrame.astro';
       </div>
     </div>
 
-    <!-- Tab bar -->
-    <div class="absolute bottom-0 left-0 right-0 bg-white border-t border-[#e5e7eb] flex justify-around py-2 px-2 rounded-b-[2rem]">
-      <div class="flex flex-col items-center gap-0.5">
-        <svg class="w-5 h-5 text-[#059669]" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-        <span class="text-[8px] font-semibold text-[#059669]">Hoy</span>
-      </div>
-      <div class="flex flex-col items-center gap-0.5">
-        <svg class="w-5 h-5 text-[#9ca3af]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
-        <span class="text-[8px] font-semibold text-[#9ca3af]">Lecciones</span>
-      </div>
-      <div class="flex flex-col items-center gap-0.5">
-        <svg class="w-5 h-5 text-[#9ca3af]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        <span class="text-[8px] font-semibold text-[#9ca3af]">Diccionario</span>
-      </div>
-      <div class="flex flex-col items-center gap-0.5">
-        <svg class="w-5 h-5 text-[#9ca3af]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
-        <span class="text-[8px] font-semibold text-[#9ca3af]">Progreso</span>
-      </div>
-    </div>
+    <TabBar active="home" />
   </div>
 </PhoneFrame>
