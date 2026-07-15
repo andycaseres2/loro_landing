@@ -1,5 +1,4 @@
 ---
-import MockupHome from './mockups/MockupHome.astro';
 ---
 
 <section class="relative pt-36 pb-28 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-br from-primary via-emerald-500 to-emerald-400">
@@ -62,11 +61,13 @@ import MockupHome from './mockups/MockupHome.astro';
       </div>
     </div>
 
-    <!-- App mockup -->
-    <div class="shrink-0 hidden md:block">
-      <div class="phone-mockup">
-        <MockupHome />
-      </div>
+    <!-- App screenshot -->
+    <div class="shrink-0 hidden md:block phone-mockup">
+      <img
+        src="/screenshots/today.png"
+        alt="Loro App - Pantalla principal"
+        class="w-[260px] lg:w-[280px] h-auto rounded-[2.5rem] shadow-2xl shadow-black/30"
+      />
     </div>
   </div>
 

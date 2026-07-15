@@ -1,7 +1,5 @@
 ---
 import MockupChat from './mockups/MockupChat.astro';
-import MockupLessons from './mockups/MockupLessons.astro';
-import MockupProgress from './mockups/MockupProgress.astro';
 ---
 
 <section id="preview" class="py-24 md:py-28 bg-white overflow-hidden">
@@ -19,8 +17,9 @@ import MockupProgress from './mockups/MockupProgress.astro';
       </p>
     </div>
 
-    <!-- Mockups -->
+    <!-- Screenshots -->
     <div class="flex flex-col md:flex-row items-start justify-center gap-10 md:gap-6 lg:gap-10">
+      <!-- Chat (CSS mockup - real screenshot is too empty) -->
       <div class="flex flex-col items-center fade-up mx-auto md:mx-0">
         <div class="hover:-translate-y-2 transition-transform duration-500">
           <MockupChat />
@@ -31,9 +30,14 @@ import MockupProgress from './mockups/MockupProgress.astro';
         </div>
       </div>
 
+      <!-- Lessons (real screenshot) -->
       <div class="flex flex-col items-center fade-up md:-mt-8 mx-auto md:mx-0">
         <div class="hover:-translate-y-2 transition-transform duration-500">
-          <MockupLessons />
+          <img
+            src="/screenshots/lessons.png"
+            alt="Loro App - Lecciones"
+            class="w-[260px] h-auto rounded-[2.5rem] shadow-2xl shadow-black/20"
+          />
         </div>
         <div class="text-center mt-5">
           <h3 class="text-base font-bold text-text">Lecciones interactivas</h3>
@@ -41,9 +45,14 @@ import MockupProgress from './mockups/MockupProgress.astro';
         </div>
       </div>
 
+      <!-- Progress (real screenshot) -->
       <div class="flex flex-col items-center fade-up mx-auto md:mx-0">
         <div class="hover:-translate-y-2 transition-transform duration-500">
-          <MockupProgress />
+          <img
+            src="/screenshots/progress.png"
+            alt="Loro App - Progreso"
+            class="w-[260px] h-auto rounded-[2.5rem] shadow-2xl shadow-black/20"
+          />
         </div>
         <div class="text-center mt-5">
           <h3 class="text-base font-bold text-text">Tu progreso</h3>
