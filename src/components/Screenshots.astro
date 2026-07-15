@@ -1,5 +1,21 @@
 ---
-import MockupChat from './mockups/MockupChat.astro';
+const screens = [
+  {
+    title: 'Chat con IA',
+    description: 'Conversaciones reales con correcciones',
+    image: '/screenshots/chat-real.png',
+  },
+  {
+    title: 'Lecciones interactivas',
+    description: 'Ejercicios que se adaptan a tu nivel',
+    image: '/screenshots/lessons.png',
+  },
+  {
+    title: 'Tu progreso',
+    description: 'Estadísticas, rachas y logros',
+    image: '/screenshots/progress.png',
+  },
+];
 ---
 
 <section id="preview" class="py-24 md:py-28 bg-white overflow-hidden">
@@ -19,46 +35,21 @@ import MockupChat from './mockups/MockupChat.astro';
 
     <!-- Screenshots -->
     <div class="flex flex-col md:flex-row items-start justify-center gap-10 md:gap-6 lg:gap-10">
-      <!-- Chat (CSS mockup - real screenshot is too empty) -->
-      <div class="flex flex-col items-center fade-up mx-auto md:mx-0">
-        <div class="hover:-translate-y-2 transition-transform duration-500">
-          <MockupChat />
+      {screens.map((screen, i) => (
+        <div class={`flex flex-col items-center fade-up mx-auto md:mx-0 ${i === 1 ? 'md:-mt-8' : ''}`}>
+          <div class="hover:-translate-y-2 transition-transform duration-500">
+            <img
+              src={screen.image}
+              alt={`Loro App - ${screen.title}`}
+              class="w-[260px] h-auto rounded-[2.5rem] shadow-2xl shadow-black/20"
+            />
+          </div>
+          <div class="text-center mt-5">
+            <h3 class="text-base font-bold text-text">{screen.title}</h3>
+            <p class="text-sm text-text-secondary mt-1">{screen.description}</p>
+          </div>
         </div>
-        <div class="text-center mt-5">
-          <h3 class="text-base font-bold text-text">Chat con IA</h3>
-          <p class="text-sm text-text-secondary mt-1">Conversaciones reales con correcciones</p>
-        </div>
-      </div>
-
-      <!-- Lessons (real screenshot) -->
-      <div class="flex flex-col items-center fade-up md:-mt-8 mx-auto md:mx-0">
-        <div class="hover:-translate-y-2 transition-transform duration-500">
-          <img
-            src="/screenshots/lessons.png"
-            alt="Loro App - Lecciones"
-            class="w-[260px] h-auto rounded-[2.5rem] shadow-2xl shadow-black/20"
-          />
-        </div>
-        <div class="text-center mt-5">
-          <h3 class="text-base font-bold text-text">Lecciones interactivas</h3>
-          <p class="text-sm text-text-secondary mt-1">Ejercicios que se adaptan a tu nivel</p>
-        </div>
-      </div>
-
-      <!-- Progress (real screenshot) -->
-      <div class="flex flex-col items-center fade-up mx-auto md:mx-0">
-        <div class="hover:-translate-y-2 transition-transform duration-500">
-          <img
-            src="/screenshots/progress.png"
-            alt="Loro App - Progreso"
-            class="w-[260px] h-auto rounded-[2.5rem] shadow-2xl shadow-black/20"
-          />
-        </div>
-        <div class="text-center mt-5">
-          <h3 class="text-base font-bold text-text">Tu progreso</h3>
-          <p class="text-sm text-text-secondary mt-1">Estadísticas, rachas y logros</p>
-        </div>
-      </div>
+      ))}
     </div>
   </div>
 </section>
